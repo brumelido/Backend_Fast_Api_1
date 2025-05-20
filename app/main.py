@@ -10,10 +10,10 @@ app = FastAPI(
 
 @app.get("/")
 def home():
-    return {"mensagem": "API da Bruna no ar! Visite /docs para ver a documentação."}
+    return {"mensagem": "API no ar! Visite /docs para ver a documentação."}
 
 @app.get("/hello")
-def read_root(name: Optional[str] = Query(None, description="Nome da pessoa para cumprimentar")):
+def read_root(name: Optional[str] = Query(None, description="Nome da pessoa")):
     if name:
         return {"message": f"Olá, {name}!"}
     return {"message": "Olá, mundo!"}
